@@ -1,0 +1,139 @@
+:root {
+    --fg-color: #ffcc00;
+    --bg-color: #1d1d1d;
+    --fg-contra-color: #000000;
+    --bg-contra-color: var(--fg-color);
+
+}
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Verdana', 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    background-color: black;
+    color: var(--fg-color);
+    padding: 1rem;
+}
+
+.contra {
+    background-color: var(--bg-contra-color);
+    color: var(--fg-contra-color);
+}
+
+.reset-contra {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 5rem;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+header p {
+    border: 1px solid var(--fg-color);
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.contact a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 3rem;
+    background: black;
+}
+
+.contact {
+    font-size: 2rem;
+    background: black;
+}
+
+img.direct-icon {
+    width: 100px;
+    vertical-align: middle;
+}
+
+.content {
+    display: grid;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid var(--fg-color);
+    background-color: var(--bg-color);
+}
+
+@media (min-width: 600px) {
+    .plot-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.plot, .info {
+    padding: 1rem;
+    /*box-shadow: 0 2px 4px rgba(255, 204, 0, 0.1);*/
+}
+
+.plot-title, .info-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.plot-details , .info-details{
+    list-style: none;
+    padding-left: 0;
+}
+.info-distance {
+    list-style: none;
+    display: inline-block;
+}
+
+li img {
+    height: 1.5rem;
+    width: 1.5rem; /* width should be defined for masks */
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .plot-title, .info-title {
+        font-size: 1.1rem;
+    }
+}
