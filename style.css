@@ -34,7 +34,7 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 2rem;
+    /*margin-bottom: 2rem;*/
 }
 
 .title {
@@ -46,6 +46,7 @@ body {
 header p {
     border: 1px solid var(--fg-color);
     background-color: black;
+    margin-bottom: 0;
 }
 
 a {
@@ -106,8 +107,11 @@ img.direct-icon {
     list-style: none;
     display: inline-block;
 }
-
-li img {
+.location {
+    font-size: 2rem;
+    text-align: center;
+}
+li img, img.icon {
     height: 1.5rem;
     width: 1.5rem; /* width should be defined for masks */
     margin-right: 0.5rem;
