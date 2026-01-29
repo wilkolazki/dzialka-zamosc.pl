@@ -44,7 +44,8 @@
 <main class="content">
     <header class="header contra">
         <h1 class="title">Działki budowlane</h1>
-        <p class="contact reset-contra"><a href="tel:+48668182452" class="reset-contra">668-182-452</a><br>
+        <p class="contact reset-contra">
+            <button id="phoneBtn" class="phone-reveal-btn reset-contra" data-phone="NjY4MTgyNDUy">Zadzwoń</button><br>
             <img src="/img/svg/direct.svg" alt="" class="direct-icon"> BEZPOŚREDNIO
         </p>
 
@@ -136,6 +137,35 @@
     <p>&copy; 2026 Szymon Wilkołazki</p>
     <p>Icons made from onlinewebfonts.com are licensed CC BY 4.0</p>
 </footer>
+
+<script>
+    document.getElementById('phoneBtn').addEventListener('click', function() {
+        var btn = this;
+        if (btn.hasAttribute('data-phone')) {
+            // Decode phone number (base64)
+            var encoded = btn.getAttribute('data-phone');
+            var phone = atob(encoded);
+            var formatted = phone.slice(0,3) + '-' + phone.slice(3,6) + '-' + phone.slice(6);
+            var fullPhone = '+48' + phone;
+
+            // Track event in Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'phone_reveal', {
+                    'event_category': 'Contact',
+                    'event_label': 'Phone Number Clicked',
+                    'value': 1
+                });
+            }
+
+            // Replace button with clickable phone link
+            var link = document.createElement('a');
+            link.href = 'tel:' + fullPhone;
+            link.className = 'reset-contra';
+            link.textContent = formatted;
+            btn.parentNode.replaceChild(link, btn);
+        }
+    });
+</script>
 
 </body>
 </html>

@@ -55,11 +55,28 @@ a {
 
 }
 
-.contact a {
+.contact a, .phone-reveal-btn {
     text-decoration: none;
     font-weight: bold;
     font-size: 3rem;
     background: black;
+}
+
+.phone-reveal-btn {
+    border: 2px solid var(--fg-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.phone-reveal-btn:hover {
+    background-color: #2a2a2a;
+    transform: scale(1.02);
+}
+
+.phone-reveal-btn:active {
+    transform: scale(0.98);
 }
 
 .contact {
