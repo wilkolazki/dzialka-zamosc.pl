@@ -60,6 +60,15 @@
                 <img alt="Działka budowlana przy drodze asfaltowej, o wymiarach 18x90m i powierzchni 1610m², w sąsiedztwie niskiej zabudowy jednorodzinnej."
                      src="/img/img-249.1-001.jpg">
             </div>
+            <div class="gallery" data-gallery="249.1">
+                <img src="/img/img-249.1-001.jpg" alt="Działka 249.1" class="gallery-thumb">
+                <img src="/img/img-249.1-010.png" alt="Działka 249.1" class="gallery-thumb">
+                <img src="/img/img-249.1-500.png" alt="Działka 249.1" class="gallery-thumb">
+                <img src="/img/img-249.1-900.png" alt="Działka 249.1" class="gallery-thumb">
+                <img src="/img/img-249.1-910.png" alt="Działka 249.1" class="gallery-thumb">
+                <img src="/img/img-249.1-920.png" alt="Działka 249.1" class="gallery-thumb">
+                <img src="/img/img-249.1-999.png" alt="Działka 249.1" class="gallery-thumb">
+            </div>
             <ul class="plot-details">
                 <li><img src="/img/svg/road.svg" alt="dojazd"/>asfaltowy</li>
                 <li><img src="/img/svg/dimensions.svg" alt="wymiary"/> 18m × 90m</li>
@@ -85,6 +94,19 @@
             <div class="image">
                 <img alt="Działka budowlana przy drodze żwirowo-gruntowej, widziana z balkonu sąsiedniego domu. Wymiary 34x37m, powierzchni 1249m²."
                      src="/img/img-249.2-001.jpg">
+            </div>
+            <div class="gallery" data-gallery="249.2">
+                <img src="/img/img-249.2-001.jpg" alt="Działka 249.2" class="gallery-thumb">
+                <img src="/img/img-249.2-200.png" alt="Działka 249.2" class="gallery-thumb">
+                <img src="/img/img-249.2-250.jpg" alt="Działka 249.2" class="gallery-thumb">
+                <img src="/img/img-249.2-300.jpg" alt="Działka 249.2" class="gallery-thumb">
+<!--                <img src="/img/img-249.2-400.jpg" alt="Działka 249.2" class="gallery-thumb">-->
+<!--                <img src="/img/img-249.2-600.jpg" alt="Działka 249.2" class="gallery-thumb">-->
+                <img src="/img/img-249.2-650.jpg" alt="Działka 249.2" class="gallery-thumb">
+                <img src="/img/img-249.2-500.png" alt="Działka 249.2" class="gallery-thumb">
+                <img src="/img/img-249.2-700.png" alt="Działka 249.2" class="gallery-thumb">
+                <img src="/img/img-249.2-800.png" alt="Działka 249.2" class="gallery-thumb">
+                <img src="/img/img-249.2-900.png" alt="Działka 249.2" class="gallery-thumb">
             </div>
             <ul class="plot-details">
                 <li><img src="/img/svg/road.svg" alt="dojazd"/>żwirowo - gruntowy</li>
@@ -151,6 +173,16 @@
     <p>Icons made from onlinewebfonts.com are licensed CC BY 4.0</p>
 </footer>
 
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev">&larr;</button>
+    <button class="lightbox-nav lightbox-next">&rarr;</button>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+</div>
+
 <script>
     document.getElementById('phoneBtn').addEventListener('click', function() {
         var btn = this;
@@ -178,6 +210,89 @@
             btn.parentNode.replaceChild(link, btn);
         }
     });
+
+    // Lightbox functionality
+    (function() {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        var closeBtn = document.querySelector('.lightbox-close');
+        var prevBtn = document.querySelector('.lightbox-prev');
+        var nextBtn = document.querySelector('.lightbox-next');
+        var currentGallery = [];
+        var currentIndex = 0;
+        var direction = 'next';
+
+        // Get all gallery thumbnails
+        var galleries = document.querySelectorAll('.gallery');
+        galleries.forEach(function(gallery) {
+            var thumbs = gallery.querySelectorAll('.gallery-thumb');
+            thumbs.forEach(function(thumb, index) {
+                thumb.addEventListener('click', function() {
+                    currentGallery = Array.from(thumbs).map(function(t) { return t.src; });
+                    currentIndex = index;
+                    direction = 'next';
+                    showImage();
+                });
+            });
+        });
+
+        function showImage() {
+            lightbox.classList.add('active');
+            lightboxImg.classList.remove('slide-in-left', 'slide-in-right');
+
+            // Trigger reflow
+            void lightboxImg.offsetWidth;
+
+            if (direction === 'next') {
+                lightboxImg.classList.add('slide-in-right');
+            } else {
+                lightboxImg.classList.add('slide-in-left');
+            }
+
+            lightboxImg.src = currentGallery[currentIndex];
+        }
+
+        function hideImage() {
+            lightbox.classList.remove('active');
+        }
+
+        function nextImage() {
+            direction = 'next';
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            showImage();
+        }
+
+        function prevImage() {
+            direction = 'prev';
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            showImage();
+        }
+
+        // Event listeners
+        closeBtn.addEventListener('click', hideImage);
+        nextBtn.addEventListener('click', nextImage);
+        prevBtn.addEventListener('click', prevImage);
+
+        // Close on background click
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                hideImage();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                hideImage();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'ArrowLeft') {
+                prevImage();
+            }
+        });
+    })();
 </script>
 
 </body>
