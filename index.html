@@ -246,6 +246,7 @@
         var touchEndX = 0;
         var isDragging = false;
         var hasMouseCapability = false;
+        var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
         // Get all gallery thumbnails
         var galleries = document.querySelectorAll('.gallery');
@@ -292,8 +293,8 @@
         function hideImage() {
             lightbox.classList.remove('active');
             clearTimeout(hideControlsTimer);
-            // Reset nav button classes on mobile
-            if (window.innerWidth <= 600) {
+            // Reset nav button classes on touch devices
+            if (isTouchDevice) {
                 prevBtn.classList.remove('show-on-mouse');
                 nextBtn.classList.remove('show-on-mouse');
             }
@@ -314,8 +315,8 @@
         // Auto-hide controls functionality
         function hideControls() {
             closeBtn.classList.add('hide-controls');
-            // Only hide nav buttons if not on mobile or if mouse capability detected
-            if (hasMouseCapability || window.innerWidth > 600) {
+            // Only hide nav buttons if not on touch device or if mouse capability detected
+            if (hasMouseCapability || !isTouchDevice) {
                 prevBtn.classList.add('hide-controls');
                 nextBtn.classList.add('hide-controls');
             }
@@ -346,8 +347,8 @@
             // Detect actual mouse movement (not touch)
             if (e.movementX !== 0 || e.movementY !== 0) {
                 hasMouseCapability = true;
-                // Show nav buttons on mobile when mouse is detected
-                if (window.innerWidth <= 600) {
+                // Show nav buttons on touch devices when mouse is detected
+                if (isTouchDevice) {
                     prevBtn.classList.add('show-on-mouse');
                     nextBtn.classList.add('show-on-mouse');
                 }

@@ -337,11 +337,9 @@ li img, img.icon {
     animation: slideInLeft 0.4s ease-out;
 }
 
-/* Responsive lightbox */
-@media (max-width: 600px) {
+/* Hide navigation buttons on touch devices (all orientations) */
+@media (hover: none) and (pointer: coarse) {
     .lightbox-nav {
-        font-size: 2rem;
-        padding: 0.5rem 1rem;
         opacity: 0;
         pointer-events: none;
     }
@@ -349,6 +347,14 @@ li img, img.icon {
     .lightbox-nav.show-on-mouse {
         opacity: 1;
         pointer-events: auto;
+    }
+}
+
+/* Responsive lightbox */
+@media (max-width: 600px) {
+    .lightbox-nav {
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
     }
 
     .lightbox-prev {
