@@ -342,6 +342,13 @@ li img, img.icon {
     .lightbox-nav {
         font-size: 2rem;
         padding: 0.5rem 1rem;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .lightbox-nav.show-on-mouse {
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .lightbox-prev {
@@ -379,5 +386,25 @@ li img, img.icon {
 
     .lightbox-content img {
         max-height: 60vh;
+    }
+}
+
+/* Portrait orientation - ensure description is below image */
+@media (orientation: portrait) {
+    .lightbox-content {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+    }
+
+    .lightbox-content img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .lightbox-description {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0.5rem;
     }
 }

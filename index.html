@@ -245,6 +245,7 @@
         var touchStartX = 0;
         var touchEndX = 0;
         var isDragging = false;
+        var hasMouseCapability = false;
 
         // Get all gallery thumbnails
         var galleries = document.querySelectorAll('.gallery');
@@ -291,6 +292,11 @@
         function hideImage() {
             lightbox.classList.remove('active');
             clearTimeout(hideControlsTimer);
+            // Reset nav button classes on mobile
+            if (window.innerWidth <= 600) {
+                prevBtn.classList.remove('show-on-mouse');
+                nextBtn.classList.remove('show-on-mouse');
+            }
         }
 
         function nextImage() {
@@ -308,8 +314,11 @@
         // Auto-hide controls functionality
         function hideControls() {
             closeBtn.classList.add('hide-controls');
-            prevBtn.classList.add('hide-controls');
-            nextBtn.classList.add('hide-controls');
+            // Only hide nav buttons if not on mobile or if mouse capability detected
+            if (hasMouseCapability || window.innerWidth > 600) {
+                prevBtn.classList.add('hide-controls');
+                nextBtn.classList.add('hide-controls');
+            }
             lightboxDescription.classList.add('hide-controls');
         }
 
@@ -333,7 +342,18 @@
         }
 
         // Mouse movement detection
-        lightbox.addEventListener('mousemove', resetHideTimer);
+        lightbox.addEventListener('mousemove', function(e) {
+            // Detect actual mouse movement (not touch)
+            if (e.movementX !== 0 || e.movementY !== 0) {
+                hasMouseCapability = true;
+                // Show nav buttons on mobile when mouse is detected
+                if (window.innerWidth <= 600) {
+                    prevBtn.classList.add('show-on-mouse');
+                    nextBtn.classList.add('show-on-mouse');
+                }
+            }
+            resetHideTimer();
+        });
 
         // Touch events for swipe navigation with drag feedback
         lightbox.addEventListener('touchstart', function (e) {
