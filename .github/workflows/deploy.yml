@@ -20,6 +20,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Update sitemap dates
+        run: |
+          python3 - << 'EOF'
+          import subprocess
+
+          def git_date(f):
+              r = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', f],
+                                 capture_output=True, text=True)
+              return r.stdout.strip()
+
+          entries = [
+              ('https://dzialka-zamosc.pl/', git_date('index.html')),
+          ]
+          lines = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+          ]
+          for loc, date in entries:
+              lines += [
+                  '    <url>',
+                  f'        <loc>{loc}</loc>',
+                  f'        <lastmod>{date}</lastmod>',
+                  '    </url>',
+              ]
+          lines.append('</urlset>')
+          with open('sitemap.xml', 'w') as fh:
+              fh.write('\n'.join(lines) + '\n')
+          print('Updated sitemap:')
+          for loc, date in entries:
+              print(f'  {loc}  ->  {date}')
+          EOF
+
+      - name: Install ImageMagick
+        run: sudo apt-get install -y imagemagick
+
       - name: Generate image thumbnails
         run: |
           mkdir -p img/thumbs
