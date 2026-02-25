@@ -381,7 +381,11 @@
         });
 
         function showImage() {
+            var wasActive = lightbox.classList.contains('active');
             lightbox.classList.add('active');
+            if (!wasActive) {
+                history.pushState({gallery: true}, '', '#gallery');
+            }
             lightboxImg.classList.remove('slide-in-left', 'slide-in-right');
 
             // Trigger reflow
@@ -411,7 +415,16 @@
                 prevBtn.classList.remove('show-on-mouse');
                 nextBtn.classList.remove('show-on-mouse');
             }
+            if (window.location.hash === '#gallery') {
+                history.back();
+            }
         }
+
+        window.addEventListener('popstate', function () {
+            if (lightbox.classList.contains('active')) {
+                hideImage();
+            }
+        });
 
         function nextImage() {
             direction = 'next';
