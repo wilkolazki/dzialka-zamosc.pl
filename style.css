@@ -137,10 +137,49 @@ li img, img.icon {
 }
 
 
+.image {
+    position: relative;
+    container-type: inline-size;
+}
+
 .image img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+.plot.sold {
+    text-decoration: line-through;
+}
+
+.sold-stamp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    z-index: 2;
+    font-size: 9cqi;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    color: #ffd700;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.sold-stamp::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+    color: #000;
+    transform: scale(1.03);
 }
 
 .footer {
