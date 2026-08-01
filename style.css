@@ -112,7 +112,7 @@ img.direct-icon {
 }
 
 .plot-title, .info-title {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
     text-align: center;
 }
@@ -148,15 +148,29 @@ li img, img.icon {
     border-radius: 8px;
 }
 
-.plot.sold {
+.photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border: 2px dashed var(--fg-color);
+    border-radius: 8px;
+    text-align: center;
+    font-style: italic;
+    padding: 1rem;
+}
+
+.plot.sold * {
     text-decoration: line-through;
 }
 
-.sold-stamp {
+.plot.sold  .sold-stamp {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
+    /*width: 100%;*/
+    padding: 0.25rem 0.5rem;
+    -webkit-text-stroke: 2px #000;
     transform: translate(-50%, -50%) rotate(-30deg);
     z-index: 2;
     font-size: 9cqi;
@@ -168,18 +182,8 @@ li img, img.icon {
     color: #ffd700;
     text-decoration: none;
     pointer-events: none;
-}
-
-.sold-stamp::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    z-index: -1;
-    color: #000;
-    transform: scale(1.03);
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .footer {
