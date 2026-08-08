@@ -1,2 +1,7 @@
 img/thumbs/
 .idea/
+node_modules/
+
+# Eleventy-generated pages (built locally on save and by CI before deploy)
+/index.html
+/dzialka-budowlana-249-*.html

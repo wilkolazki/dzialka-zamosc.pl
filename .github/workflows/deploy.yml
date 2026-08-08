@@ -20,9 +20,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (Eleventy)
+        run: npm run build
+
       - name: Update sitemap dates
         run: |
           python3 - << 'EOF'
+          import json
           import subprocess
 
           def git_date(f):
@@ -30,9 +43,15 @@ jobs:
                                  capture_output=True, text=True)
               return r.stdout.strip()
 
+          with open('src/_data/parcels.json', encoding='utf-8') as fh:
+              parcels = json.load(fh)
+
           entries = [
               ('https://dzialka-zamosc.pl/', git_date('index.html')),
           ]
+          for parcel in parcels:
+              path = f"dzialka-budowlana-249-{parcel['number']}.html"
+              entries.append((f'https://dzialka-zamosc.pl/{path}', git_date(path)))
           lines = [
               '<?xml version="1.0" encoding="UTF-8"?>',
               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
