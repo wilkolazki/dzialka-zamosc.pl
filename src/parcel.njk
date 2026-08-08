@@ -1,0 +1,36 @@
+---
+layout: base.njk
+pagination:
+  data: parcels
+  size: 1
+  alias: parcel
+permalink: "dzialka-budowlana-249-{{ parcel.number }}.html"
+eleventyComputed:
+  title: "{{ parcel.seo.pageTitle }}"
+  metaDescription: "{{ parcel.seo.metaDescription }}"
+  canonical: "{{ site.siteUrl }}/dzialka-budowlana-249-{{ parcel.number }}.html"
+  ogImage: "{{ parcel.seo.ogImage }}"
+  heading: "Działka budowlana nr 249/{{ parcel.number }} — {{ parcel.area }} m²"
+---
+{% include "parcel-card.njk" %}
+
+{% set genericDescription = false %}
+{% include "info-section.njk" %}
+
+<section class="info">
+    <h2 class="info-title">Opis działki</h2>
+    {% if parcel.description and parcel.description.length %}
+    {% for para in parcel.description %}
+    <p>{{ para | safe }}</p>
+    {% endfor %}
+    {% else %}
+    <p class="description-placeholder">Szczegółowy opis tej działki pojawi się wkrótce.</p>
+    {% endif %}
+</section>
+
+{% set nav = parcelNav[parcel.number] %}
+<nav class="plot-nav">
+    <a href="dzialka-budowlana-249-{{ nav.prev.number }}.html" class="reset-contra plot-nav-prev">&larr; Działka 249/{{ nav.prev.number }}</a>
+    <a href="index.html" class="reset-contra plot-nav-home">Strona główna</a>
+    <a href="dzialka-budowlana-249-{{ nav.next.number }}.html" class="reset-contra plot-nav-next">Działka 249/{{ nav.next.number }} &rarr;</a>
+</nav>

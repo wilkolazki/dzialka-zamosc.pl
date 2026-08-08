@@ -1,0 +1,115 @@
+[
+  {
+    "number": 1,
+    "id": "249.1",
+    "title": "Działka budowlana nr 249/1",
+    "area": 1610,
+    "dimensions": "18m × 90m",
+    "access": "asfaltowy",
+    "sold": false,
+    "description": null,
+    "mainImage": {
+      "src": "/img/img-249.1-001.webp",
+      "alt": "Działka budowlana przy drodze asfaltowej, o wymiarach 18x90m i powierzchni 1610m², w sąsiedztwie niskiej zabudowy jednorodzinnej."
+    },
+    "gallery": [
+      { "src": "/img/img-249.1-001.webp", "thumb": "/img/thumbs/img-249.1-001.webp", "alt": "Działka 249/1: widok z ul. Majdan na front działki" },
+      { "src": "/img/img-249.1-010.webp", "thumb": "/img/thumbs/img-249.1-010.webp", "alt": "Działka 249/1: widok z ul. Majdan " },
+      { "src": "/img/img-249.1-500.webp", "thumb": "/img/thumbs/img-249.1-500.webp", "alt": "Wizualizacja AI, jak mógłby wylądać dom posadowiony na działce 249.1" },
+      { "src": "/img/img-249.1-999.webp", "thumb": "/img/thumbs/img-249.1-999.webp", "alt": "Działka 249/1 - widok z południowej grancy działki w stronę ul. Majdan, widoczne słupki wyznaczające granice działki; w tle domy północnej stronie ul. Majdan." },
+      { "src": "/img/img-249.1-900.webp", "thumb": "/img/thumbs/img-249.1-900.webp", "alt": "Wycinek z MPZP - granice działek z przed przekształcenia, widoczne w południowej części linie energetyczne w rzeczywistości zostały zdemontowane i przeniesione pod ziemię w innym przebiegu" },
+      { "src": "/img/img-249.1-910.webp", "thumb": "/img/thumbs/img-249.1-910.webp", "alt": "Działka 249/1 - fragmnt ortofotomapy z Geoportalu. Widoczna ul. Majdan ze ścieżką rowerową i chodnikiem. " },
+      { "src": "/img/img-249.1-920.webp", "thumb": "/img/thumbs/img-249.1-920.webp", "alt": "Działka 249/1 - widoczne dostępne media - prąd (czerwony), gaz (żółty), kanalizacja sanitarna ks (brązowy) i światłowód (ts)" },
+      { "src": "/img/img-all-890.webp", "thumb": "/img/thumbs/img-all-890.webp", "alt": "Bocian na gnieździe na kominie w okolicy ul. Majdan" },
+      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Budynek w pobliżu działek przy ul. Majdan" },
+      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko sportowe w okolicy" },
+      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko w okolicy, w tle pola uprawne" }
+    ],
+    "mapLink": { "url": "https://maps.app.goo.gl/12V8EJSKeCH45LN6A", "label": "Zamość, ul.&nbsp;Majdan" },
+    "geoportal": { "id": "066401_1.0001.AR_14.249/1", "url": "https://mapy.geoportal.gov.pl/imap/Imgp_2.html?identifyParcel=066401_1.0001.AR_14.249%2f1" },
+    "listings": [
+      { "icon": "/icons/okolica.pl.ico", "label": "okolica.pl", "url": "https://www.okolica.pl/offer/show/89370-S-f0639/formular" },
+      { "icon": "/icons/nieruchomosci-online.pl.ico", "label": "nieruchomosci-online.pl", "url": "https://zamosc.nieruchomosci-online.pl/dzialka,pusta/26435491.html" }
+    ],
+    "seo": {
+      "pageTitle": "Działka budowlana Zamość – ul. Majdan nr 249/1 | 1610m² | Bezpośrednio",
+      "metaDescription": "Sprzedam działkę budowlaną w Zamościu przy ul. Majdan (nr 249/1), 1610m². Dojazd asfaltowy, media w pobliżu, MPZP. Oferta bezpośrednia od właściciela.",
+      "ogImage": "https://dzialka-zamosc.pl/img/img-249.1-001.webp"
+    }
+  },
+  {
+    "number": 2,
+    "id": "249.2",
+    "title": "Działka budowlana nr 249/2",
+    "area": 1249,
+    "dimensions": "34m × 37m",
+    "access": "żwirowo - gruntowy",
+    "sold": true,
+    "description": null,
+    "mainImage": {
+      "src": "/img/img-249.2-001.webp",
+      "alt": "Działka budowlana przy drodze żwirowo-gruntowej, widziana z balkonu sąsiedniego domu. Wymiary 34x37m, powierzchnia 1249m²."
+    },
+    "gallery": [
+      { "src": "/img/img-249.2-001.webp", "thumb": "/img/thumbs/img-249.2-001.webp", "alt": "Działka 249/2: Widok z sąsiedniego domu, widoczne ogrodzenie działki po wschodniej stronie drogi wewnętrznej, oraz droga dojazdowa." },
+      { "src": "/img/img-249.2-200.webp", "thumb": "/img/thumbs/img-249.2-200.webp", "alt": "Działka 249/2: Widok z I piętra domu po północnej stronie ul. Majdan, zaznaczone granice działki, widoczna żwirowa doga dojazdowa." },
+      { "src": "/img/img-249.2-250.webp", "thumb": "/img/thumbs/img-249.2-250.webp", "alt": "Działka 249/2: Widok na drogę wewnętrzną - odcinek żwidowy ma ok. 70m, dalej droga gruntowa." },
+      { "src": "/img/img-249.2-300.webp", "thumb": "/img/thumbs/img-249.2-300.webp", "alt": "Działka 249/2: Widok na północ z południowo zachodniego rogu działki. Widoczne słupki wyznaczające punkty graniczne działki." },
+      { "src": "/img/img-249.2-650.webp", "thumb": "/img/thumbs/img-249.2-650.webp", "alt": "Działka 249/2: Widok z południowo wschodniego rogu działki w stronę północno zachodnią. W tle sąsiedni dom przy drodze wewnętrznej." },
+      { "src": "/img/img-249.2-500.webp", "thumb": "/img/thumbs/img-249.2-500.webp", "alt": "Działka 249/2: wizualizacja AI - tak mógłby wyglądać dom posadowiony na działce 249/2" },
+      { "src": "/img/img-249.2-700.webp", "thumb": "/img/thumbs/img-249.2-700.webp", "alt": "Ortofotomapa z Geoportalu - widocze działki 249/1, 249/2 i fragment 249/3" },
+      { "src": "/img/img-249.2-800.webp", "thumb": "/img/thumbs/img-249.2-800.webp", "alt": "Ortofotomapa z zaznaczoną drogą dojazdową. Dojazd w gratis przy zakupie działki." },
+      { "src": "/img/img-249.2-900.webp", "thumb": "/img/thumbs/img-249.2-900.webp", "alt": "Działka 249/2 wraz z instalacjami podziemnymi - w większości media dostępne w ul. Majdan, linia energetyczna w drodze wewnętrznej." },
+      { "src": "/img/img-all-890.webp", "thumb": "/img/thumbs/img-all-890.webp", "alt": "Bocian na gnieździe na kominie w okolicy ul. Majdan" },
+      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Budynek w pobliżu działek przy ul. Majdan" },
+      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko sportowe w okolicy" },
+      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko w okolicy, w tle pola uprawne" }
+    ],
+    "mapLink": { "url": "https://maps.app.goo.gl/U4SsWF27Pro1nSC88", "label": "Zamość, ul.&nbsp;Majdan" },
+    "geoportal": { "id": "066401_1.0001.AR_14.249/2", "url": "https://mapy.geoportal.gov.pl/imap/Imgp_2.html?identifyParcel=066401_1.0001.AR_14.249%2f2" },
+    "listings": [
+      { "icon": "/icons/okolica.pl.ico", "label": "okolica.pl", "url": "https://www.okolica.pl/offer/show/89370-S-ca758/formular" },
+      { "icon": "/icons/nieruchomosci-online.pl.ico", "label": "nieruchomosci-online.pl", "url": "https://zamosc.nieruchomosci-online.pl/dzialka,budowlana,pusta/25918006.html" }
+    ],
+    "seo": {
+      "pageTitle": "Działka budowlana Zamość – ul. Majdan nr 249/2 | 1249m² | SPRZEDANE",
+      "metaDescription": "Działka budowlana w Zamościu przy ul. Majdan (nr 249/2), 1249m² – SPRZEDANA. Zobacz pozostałe dostępne działki budowlane przy ul. Majdan.",
+      "ogImage": "https://dzialka-zamosc.pl/img/img-249.2-001.webp"
+    }
+  },
+  {
+    "number": 3,
+    "id": "249.3",
+    "title": "Działka budowlana nr 249/3",
+    "area": 1249,
+    "dimensions": "34m × 37m",
+    "access": null,
+    "sold": false,
+    "description": null,
+    "mainImage": {
+      "src": "/img/img-249.3-000.webp",
+      "alt": "Działka budowlana 249/3 - zaznaczone granice działki, w tle zabudowa przy ul. Majdan"
+    },
+    "gallery": [
+      { "src": "/img/img-249.3-000.webp", "thumb": "/img/thumbs/img-249.3-000.webp", "alt": "Działka 249/3: zaznaczone granice działki, w tle zabudowa przy ul. Kilińskiego" },
+      { "src": "/img/img-249.3-150.webp", "thumb": "/img/thumbs/img-249.3-150.webp", "alt": "Działka 249/3: widok z narożnika działki, w tle charakterystyczny komin z gniazdem bociana" },
+      { "src": "/img/img-249.3-200.webp", "thumb": "/img/thumbs/img-249.3-200.webp", "alt": "Działka 249/3: widok w kierunku sąsiedniej zabudowy jednorodzinnej" },
+      { "src": "/img/img-249.3-300.webp", "thumb": "/img/thumbs/img-249.3-300.webp", "alt": "Działka 249/3: widok na drogę dojazdową wzdłuż granicy działki" },
+      { "src": "/img/img-249.3-700.webp", "thumb": "/img/thumbs/img-249.3-700.webp", "alt": "Ortofotomapa z zaznaczoną granicą działki 249/3 oraz drogą dojazdową, widoczne wymiary działki" },
+      { "src": "/img/img-249.3-710.webp", "thumb": "/img/thumbs/img-249.3-710.webp", "alt": "Ortofotomapa z Geoportalu - szerszy widok okolicy z zaznaczoną działką 249/3" },
+      { "src": "/img/img-249.3-720.webp", "thumb": "/img/thumbs/img-249.3-720.webp", "alt": "Wycinek z mapy uzbrojenia terenu z zaznaczoną działką 249/3" },
+      { "src": "/img/img-all-890.webp", "thumb": "/img/thumbs/img-all-890.webp", "alt": "Bocian na gnieździe na kominie w okolicy ul. Majdan" },
+      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Budynek w pobliżu działek przy ul. Majdan" },
+      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko sportowe w okolicy" },
+      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko w okolicy, w tle pola uprawne" }
+    ],
+    "mapLink": null,
+    "geoportal": { "id": "066401_1.0001.AR_14.249/3", "url": "https://mapy.geoportal.gov.pl/imap/Imgp_2.html?identifyParcel=066401_1.0001.AR_14.249%2f3" },
+    "listings": [],
+    "seo": {
+      "pageTitle": "Działka budowlana Zamość – ul. Majdan nr 249/3 | 1249m² | Bezpośrednio",
+      "metaDescription": "Sprzedam działkę budowlaną w Zamościu przy ul. Majdan (nr 249/3), 1249m². Media w pobliżu, MPZP. Oferta bezpośrednia od właściciela.",
+      "ogImage": "https://dzialka-zamosc.pl/img/img-249.3-000.webp"
+    }
+  }
+]

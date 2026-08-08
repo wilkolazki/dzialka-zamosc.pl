@@ -1,0 +1,50 @@
+{
+  "siteUrl": "https://dzialka-zamosc.pl",
+  "copyrightYear": 2026,
+  "gtagId": "G-GN2XY58N64",
+  "phoneDataAttr": "NjY4MTgyNDUy",
+  "seller": {
+    "name": "Szymon Wilkołazki",
+    "telephone": "+48668182452"
+  },
+  "address": {
+    "locality": "Zamość",
+    "street": "ul. Majdan",
+    "country": "PL",
+    "postalCode": "22-400"
+  },
+  "geo": {
+    "latitude": "50.7175",
+    "longitude": "23.2519"
+  },
+  "mpzp": {
+    "text": "Budowlane – MPZP: obszary 29.47 MN+R i 29.48 MN+R",
+    "url": "https://edziennik.lublin.uw.gov.pl/WDU_L/2017/970/akt.pdf"
+  },
+  "busLines": "4, 8, 10, 17",
+  "distances": [
+    { "label": "Przystanek", "value": "170m" },
+    { "label": "Galeria Twierdza", "value": "3,2km" },
+    { "label": "Żłobek i przedszkole", "value": "700m" }
+  ],
+  "descriptionParagraphs": [
+    "Oferuję na sprzedaż dwie atrakcyjne <strong>działki budowlane w Zamościu</strong> przy ul.&nbsp;Majdan. Ta <strong>działka budowlana Zamość</strong> to idealna propozycja dla osób poszukujących terenu pod budowę domu jednorodzinnego. Nieruchomości znajdują się w spokojnej, rozwijającej się części miasta, z jednocześnie bardzo dobrym dojazdem do centrum oraz pełną dostępnością komunikacji miejskiej. Obie działki budowlane objęte są miejscowym planem zagospodarowania przestrzennego (MPZP) i przeznaczone pod zabudowę jednorodzinną.",
+    "Te <strong>działki budowlane w Zamościu</strong> mają regularne kształty i dogodne wymiary, co ułatwia projektowanie domu oraz zagospodarowanie terenu. Media (prąd, gaz, woda, kanalizacja) i infrastruktura drogowa znajdują się w bezpośrednim sąsiedztwie. Lokalizacja przy ul. Majdan zapewnia szybki dostęp do sklepów, galerii handlowej Twierdza (3,2 km), przystanków autobusowych (170m) oraz placówek edukacyjnych (żłobek i przedszkole 700m). Oferta sprzedaży jest bezpośrednia, bez pośredników i dodatkowych prowizji.",
+    "Szukasz <strong>działki budowlanej w Zamościu</strong>? Te nieruchomości przy ul. Majdan to doskonała inwestycja - spokojna okolica, dobra komunikacja miejska i wszystkie niezbędne media w zasięgu ręki. Skontaktuj się bezpośrednio z właścicielem."
+  ],
+  "faq": [
+    {
+      "question": "Gdzie znajdują się działki budowlane w Zamościu?",
+      "answer": "Działki budowlane znajdują się w Zamościu przy ul. Majdan. To spokojna, rozwijająca się część miasta z dobrym dojazdem do centrum i pełną dostępnością komunikacji miejskiej (linie 4, 8, 10, 17)."
+    },
+    {
+      "question": "Jaka jest powierzchnia działek budowlanych w Zamościu?",
+      "answer": "Dostępne są dwie działki: pierwsza o powierzchni 1610 m² (wymiary 18m × 90m) z dojazdem asfaltowym oraz druga o powierzchni 1249 m² (wymiary 34m × 37m) z dojazdem żwirowo-gruntowym."
+    },
+    {
+      "question": "Czy działki budowlane w Zamościu są objęte planem zagospodarowania?",
+      "answer": "Tak, obie działki budowlane są objęte miejscowym planem zagospodarowania przestrzennego (MPZP). Przeznaczenie: obszary 29.47 MN+R i 29.48 MN+R - zabudowa jednorodzinna z możliwością prowadzenia działalności rolniczej."
+    }
+  ],
+  "iconCredits": "Icons made from onlinewebfonts.com are licensed CC BY 4.0"
+}

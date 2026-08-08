@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: "Działka budowlana Zamość - ul. Majdan | 1249-1610m² | Bezpośrednio"
+metaDescription: "Działka budowlana Zamość - sprzedam 2 działki przy ul. Majdan (1249m² i 1610m²). Dojazd asfaltowy/żwirowy, media w pobliżu, MPZP. Bezpośrednio od właściciela."
+canonical: "https://dzialka-zamosc.pl/"
+ogImage: "https://dzialka-zamosc.pl/img/img-249.1-001.webp"
+heading: "Działki budowlane Zamość"
+permalink: "index.html"
+---
+<div class="location">
+    <img class="icon" src="/img/svg/location.svg" alt="adres">{{ site.address.locality }}, ul.&nbsp;Majdan
+</div>
+<div class="plot-list">
+    {% for parcel in parcels %}
+    {% set summary = true %}
+    {% include "parcel-card.njk" %}
+    {% endfor %}
+</div>
+
+{% include "info-section.njk" %}

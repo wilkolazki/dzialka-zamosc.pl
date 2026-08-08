@@ -1,0 +1,26 @@
+{% set genericDescription = genericDescription | default(true) %}
+<section class="info">
+    <h2 class="info-title">Informacje </h2>
+    <ul class="info-details">
+        <li><img src="/img/svg/house.svg" alt="przeznaczenie"/>
+            <a href="{{ site.mpzp.url }}">{{ site.mpzp.text }};</a>
+        </li>
+        <li><img src="/img/svg/bus.svg" alt="dostępność komunikacji miejskiej"/> {{ site.busLines }}</li>
+        <li><img src="/img/svg/location.svg" alt="adres">{{ site.address.locality }}, ul.&nbsp;Majdan</li>
+        {% for d in site.distances %}
+        <li><img src="/img/svg/distance.svg" alt="Odległości"/>
+            {{ d.label }}: {{ d.value }}
+        </li>
+        {% endfor %}
+
+    </ul>
+
+    {% if genericDescription %}
+    <h2 class="info-title">Działka budowlana Zamość - szczegółowy opis</h2>
+    {% for para in site.descriptionParagraphs %}
+    <p>
+        {{ para | safe }}
+    </p>
+    {% endfor %}
+    {% endif %}
+</section>

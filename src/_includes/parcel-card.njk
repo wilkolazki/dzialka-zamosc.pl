@@ -1,0 +1,52 @@
+{% set summary = summary | default(false) %}
+{% set detailHref = "dzialka-budowlana-249-" + parcel.number + ".html" %}
+<section class="plot{% if parcel.sold %} sold{% endif %}" id="plot-{{ parcel.id }}">
+    <h2 class="plot-title">{% if summary %}<a href="{{ detailHref }}" class="reset-contra">{{ parcel.title }} &mdash; {{ parcel.area }} m²</a>{% else %}{{ parcel.title }} &mdash; {{ parcel.area }} m²{% endif %}</h2>
+    <div class="image">
+        {% if summary %}<a href="{{ detailHref }}" class="reset-contra">{% endif %}
+        {% if parcel.mainImage %}
+        <img alt="{{ parcel.mainImage.alt }}" src="{{ parcel.mainImage.src }}">
+        {% else %}
+        <div class="photo-placeholder">Zdjęcia pojawią się wkrótce</div>
+        {% endif %}
+        {% if summary %}</a>{% endif %}
+        {% if parcel.sold %}
+        <div class="sold-stamp" data-text="SPRZEDANE" aria-hidden="true">SPRZEDANE</div>
+        {% endif %}
+    </div>
+    {% if not summary and parcel.gallery.length %}
+    <div class="gallery" data-gallery="{{ parcel.id }}">
+        {% for img in parcel.gallery %}
+        <a href="{{ img.src }}" target="_blank" rel="noopener"><img
+                src="{{ img.thumb }}" alt="{{ img.alt }}"
+                class="gallery-thumb"></a>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <ul class="plot-details">
+        {% if not summary %}
+        {% if parcel.access %}<li><img src="/img/svg/road.svg" alt="dojazd"/>{{ parcel.access }}</li>{% endif %}
+        {% endif %}
+        <li><img src="/img/svg/dimensions.svg" alt="wymiary"/> {{ parcel.dimensions }}</li>
+        <li><img src="/img/svg/area-floor-size-icon.svg" alt="powierzchnia"/> {{ parcel.area }} m²</li>
+        {% if not summary %}
+        <li><img src="/img/svg/location.svg" alt="położenie"/>
+            {% if parcel.mapLink %}
+            <a href="{{ parcel.mapLink.url }}" target="_blank" rel="noopener">{{ parcel.mapLink.label | safe }}</a>
+            {% else %}
+            {{ site.address.locality }}, ul.&nbsp;Majdan
+            {% endif %}</li>
+        <li><img src="/img/svg/geoportal.svg" alt="Działka w geoportalu"/>
+            <a href="{{ parcel.geoportal.url }}" target="_blank" rel="noopener">{{ parcel.geoportal.id }}</a></li>
+
+        {% for listing in parcel.listings %}
+        <li><img src="{{ listing.icon }}" alt="">
+            <a href="{{ listing.url }}" target="_blank" rel="noopener">{{ listing.label }}</a>
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+    {% if summary %}
+    <a href="{{ detailHref }}" class="plot-more reset-contra">Zobacz więcej &rarr;</a>
+    {% endif %}
+</section>

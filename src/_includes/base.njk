@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="{{ metaDescription }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ canonical }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ canonical }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ metaDescription }}">
+    {% if ogImage %}<meta property="og:image" content="{{ ogImage }}">{% endif %}
+
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="style.css"/>
+
+    {% if parcel %}
+    <script type="application/ld+json">{{ parcel | parcelJsonLd | safe }}</script>
+    {% else %}
+    <script type="application/ld+json">{{ indexJsonLd | safe }}</script>
+    <script type="application/ld+json">{{ faqJsonLd | safe }}</script>
+    {% endif %}
+
+</head>
+<body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtagId }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.gtagId }}');
+</script>
+
+<main class="content">
+    <header class="header contra">
+        <h1 class="title">{{ heading }}</h1>
+        <p class="contact reset-contra">
+            <button id="phoneBtn" class="phone-reveal-btn reset-contra" data-phone="{{ site.phoneDataAttr }}">Zadzwoń</button><br>
+            <img src="/img/svg/direct.svg" alt="" class="direct-icon">BEZPOŚREDNIO
+        </p>
+
+    </header>
+
+    {{ content | safe }}
+
+</main>
+
+<footer class="footer">
+    <p>&copy; {{ site.copyrightYear }} {{ site.seller.name }}</p>
+    <p>{{ site.iconCredits }}</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev">&larr;</button>
+    <button class="lightbox-nav lightbox-next">&rarr;</button>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="">
+        <div id="lightbox-description" class="lightbox-description"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('phoneBtn').addEventListener('click', function () {
+        var btn = this;
+        if (btn.hasAttribute('data-phone')) {
+            // Decode phone number (base64)
+            var encoded = btn.getAttribute('data-phone');
+            var phone = atob(encoded);
+            var formatted = phone.slice(0, 3) + '-' + phone.slice(3, 6) + '-' + phone.slice(6);
+            var fullPhone = '+48' + phone;
+
+            // Track event in Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'phone_reveal', {
+                    'event_category': 'Contact',
+                    'event_label': 'Phone Number Clicked',
+                    'value': 1
+                });
+            }
+
+            // Replace button with clickable phone link
+            var link = document.createElement('a');
+            link.href = 'tel:' + fullPhone;
+            link.className = 'reset-contra';
+            link.textContent = formatted;
+            btn.parentNode.replaceChild(link, btn);
+        }
+    });
+
+    // Lightbox functionality
+    (function () {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        var lightboxDescription = document.getElementById('lightbox-description');
+        var closeBtn = document.querySelector('.lightbox-close');
+        var prevBtn = document.querySelector('.lightbox-prev');
+        var nextBtn = document.querySelector('.lightbox-next');
+        var currentGallery = [];
+        var currentIndex = 0;
+        var direction = 'next';
+        var hideControlsTimer = null;
+        var touchStartX = 0;
+        var touchEndX = 0;
+        var isDragging = false;
+        var hasMouseCapability = false;
+        var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+        // Get all gallery thumbnails
+        var galleries = document.querySelectorAll('.gallery');
+        galleries.forEach(function (gallery) {
+            var thumbs = gallery.querySelectorAll('.gallery-thumb');
+            thumbs.forEach(function (thumb, index) {
+                thumb.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    currentGallery = Array.from(thumbs).map(function (t) {
+                        return {
+                            src: t.parentElement.href,
+                            alt: t.alt
+                        };
+                    });
+                    currentIndex = index;
+                    direction = 'next';
+                    showImage();
+                });
+            });
+        });
+
+        function showImage() {
+            var wasActive = lightbox.classList.contains('active');
+            lightbox.classList.add('active');
+            if (!wasActive) {
+                history.pushState({gallery: true}, '', '#gallery');
+            }
+            lightboxImg.classList.remove('slide-in-left', 'slide-in-right');
+
+            // Trigger reflow
+            void lightboxImg.offsetWidth;
+
+            if (direction === 'next') {
+                lightboxImg.classList.add('slide-in-right');
+            } else {
+                lightboxImg.classList.add('slide-in-left');
+            }
+
+            var currentImage = currentGallery[currentIndex];
+            lightboxImg.src = currentImage.src;
+            lightboxImg.alt = currentImage.alt;
+            lightboxDescription.textContent = currentImage.alt;
+
+            // Reset control visibility and start hide timer
+            showControls();
+            startHideTimer();
+
+            // Preload adjacent images: next, prev, then next-next
+            preloadImages();
+        }
+
+        function preloadImages() {
+            var total = currentGallery.length;
+            if (total <= 1) return;
+            var indices = [
+                (currentIndex + 1) % total,
+                (currentIndex - 1 + total) % total,
+                (currentIndex + 2) % total
+            ];
+            // Deduplicate (can happen with very small galleries)
+            var seen = {};
+            indices.forEach(function (idx) {
+                if (idx !== currentIndex && !seen[idx]) {
+                    seen[idx] = true;
+                    var img = new Image();
+                    img.src = currentGallery[idx].src;
+                }
+            });
+        }
+
+        function hideImage() {
+            lightbox.classList.remove('active');
+            clearTimeout(hideControlsTimer);
+            // Reset nav button classes on touch devices
+            if (isTouchDevice) {
+                prevBtn.classList.remove('show-on-mouse');
+                nextBtn.classList.remove('show-on-mouse');
+            }
+            if (window.location.hash === '#gallery') {
+                history.back();
+            }
+        }
+
+        window.addEventListener('popstate', function () {
+            if (lightbox.classList.contains('active')) {
+                hideImage();
+            }
+        });
+
+        function nextImage() {
+            direction = 'next';
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            showImage();
+        }
+
+        function prevImage() {
+            direction = 'prev';
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            showImage();
+        }
+
+        // Auto-hide controls functionality
+        function hideControls() {
+            closeBtn.classList.add('hide-controls');
+            // Only hide nav buttons if not on touch device or if mouse capability detected
+            if (hasMouseCapability || !isTouchDevice) {
+                prevBtn.classList.add('hide-controls');
+                nextBtn.classList.add('hide-controls');
+            }
+            lightboxDescription.classList.add('hide-controls');
+        }
+
+        function showControls() {
+            closeBtn.classList.remove('hide-controls');
+            prevBtn.classList.remove('hide-controls');
+            nextBtn.classList.remove('hide-controls');
+            lightboxDescription.classList.remove('hide-controls');
+        }
+
+        function startHideTimer() {
+            clearTimeout(hideControlsTimer);
+            hideControlsTimer = setTimeout(hideControls, 20000); // 20 seconds
+        }
+
+        function resetHideTimer() {
+            if (lightbox.classList.contains('active')) {
+                showControls();
+                startHideTimer();
+            }
+        }
+
+        // Mouse movement detection
+        lightbox.addEventListener('mousemove', function (e) {
+            // Detect actual mouse movement (not touch)
+            if (e.movementX !== 0 || e.movementY !== 0) {
+                hasMouseCapability = true;
+                // Show nav buttons on touch devices when mouse is detected
+                if (isTouchDevice) {
+                    prevBtn.classList.add('show-on-mouse');
+                    nextBtn.classList.add('show-on-mouse');
+                }
+            }
+            resetHideTimer();
+        });
+
+        // Touch events for swipe navigation with drag feedback
+        lightbox.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+            lightboxImg.classList.add('dragging');
+            resetHideTimer();
+        }, {passive: true});
+
+        lightbox.addEventListener('touchmove', function (e) {
+            if (!isDragging) return;
+
+            var touchCurrentX = e.changedTouches[0].screenX;
+            var deltaX = touchCurrentX - touchStartX;
+
+            // Apply transform to move the image with the finger
+            // Reduce the movement slightly for a more natural feel
+            var dampedDelta = deltaX * 0.8;
+            lightboxImg.style.transform = 'translateX(' + dampedDelta + 'px)';
+        }, {passive: true});
+
+        lightbox.addEventListener('touchend', function (e) {
+            if (!isDragging) return;
+
+            touchEndX = e.changedTouches[0].screenX;
+            isDragging = false;
+
+            // Remove dragging class and reset transform
+            lightboxImg.classList.remove('dragging');
+            lightboxImg.style.transform = '';
+
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            var swipeThreshold = 50; // minimum distance for swipe
+            var diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swiped left - next image
+                    nextImage();
+                } else {
+                    // Swiped right - previous image
+                    prevImage();
+                }
+            }
+        }
+
+        // Event listeners
+        closeBtn.addEventListener('click', hideImage);
+        nextBtn.addEventListener('click', nextImage);
+        prevBtn.addEventListener('click', prevImage);
+
+        // Close on background click
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) {
+                hideImage();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                hideImage();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'ArrowLeft') {
+                prevImage();
+            }
+        });
+    })();
+</script>
+
+</body>
+</html>
