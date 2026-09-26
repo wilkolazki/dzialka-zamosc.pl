@@ -1,5 +1,6 @@
-const parcels = require("../src/_data/parcels.json");
-const site = require("../src/_data/site.json");
+const loadJson5 = require("./loadJson5.js");
+const parcels = require("./parcels.js");
+const site = loadJson5("src/_data/site.json5");
 
 function parcelListing(parcel) {
   const canonical = `${site.siteUrl}/dzialka-budowlana-249-${parcel.number}.html`;
@@ -77,6 +78,41 @@ function buildIndexListing() {
   return JSON.stringify(listing, null, 4);
 }
 
+function buildDeveloperOfferListing() {
+  const canonical = `${site.siteUrl}/oferta-dla-developera.html`;
+  const listing = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Nieruchomość inwestycyjna – działki 249/1, 83/3 i 83/5, Zamość",
+    "description": "Oferta dla developera: połączone działki 249/1 i 83/3 (łącznie 3022 m²) wraz z działką drogową 83/5, pod budowę dwóch domów dwulokalowych w Zamościu przy ul. Majdan.",
+    "url": canonical,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": site.address.locality,
+      "streetAddress": site.address.street,
+      "addressCountry": site.address.country,
+      "postalCode": site.address.postalCode
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": site.geo.latitude,
+      "longitude": site.geo.longitude
+    },
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": "3022",
+      "unitCode": "MTK"
+    },
+    "seller": {
+      "@type": "Person",
+      "name": site.seller.name,
+      "telephone": site.seller.telephone
+    },
+    "image": site.siteUrl + "/img/img-249.1-001.webp"
+  };
+  return JSON.stringify(listing, null, 4);
+}
+
 function buildFaqPage() {
   const faq = {
     "@context": "https://schema.org",
@@ -96,5 +132,6 @@ function buildFaqPage() {
 module.exports = {
   parcelListing,
   indexListing: buildIndexListing(),
-  faqPage: buildFaqPage()
+  faqPage: buildFaqPage(),
+  developerOfferListing: buildDeveloperOfferListing()
 };

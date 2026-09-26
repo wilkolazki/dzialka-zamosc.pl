@@ -11,10 +11,14 @@ permalink: "index.html"
     <img class="icon" src="/img/svg/location.svg" alt="adres">{{ site.address.locality }}, ul.&nbsp;Majdan
 </div>
 <div class="plot-list">
-    {% for parcel in parcels %}
+    {% for parcel in visibleParcels %}
     {% set summary = true %}
     {% include "parcel-card.njk" %}
     {% endfor %}
 </div>
+
+<section class="info developer-teaser">
+    <p><strong>Okazja dla developera:</strong> działkę 249/1 można sprzedać razem z sąsiednimi działkami 83/3 i 83/5, dając 3022 m² pod budowę dwóch domów dwulokalowych (4 lokale). <a href="oferta-dla-developera.html">Zobacz szczegóły tej oferty &rarr;</a></p>
+</section>
 
 {% include "info-section.njk" %}

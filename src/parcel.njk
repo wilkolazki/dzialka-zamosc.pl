@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 pagination:
-  data: parcels
+  data: visibleParcels
   size: 1
   alias: parcel
 permalink: "dzialka-budowlana-249-{{ parcel.number }}.html"
@@ -10,16 +10,25 @@ eleventyComputed:
   metaDescription: "{{ parcel.seo.metaDescription }}"
   canonical: "{{ site.siteUrl }}/dzialka-budowlana-249-{{ parcel.number }}.html"
   ogImage: "{{ parcel.seo.ogImage }}"
-  heading: "Działka budowlana nr 249/{{ parcel.number }} — {{ parcel.area }} m²"
+  heading: "{{ parcel.seo.pageTitle }} — {{ parcel.area }} m²"
 ---
 {% include "parcel-card.njk" %}
+
+{% if parcel.id == "249.1" %}
+<section class="info developer-teaser">
+    <p><strong>Okazja dla developera:</strong> tę działkę można połączyć z sąsiednimi działkami 83/3 i 83/5, uzyskując grunt pod budowę dwóch domów dwulokalowych (4 lokale). <a href="oferta-dla-developera.html">Zobacz szczegóły tej oferty &rarr;</a></p>
+</section>
+{% endif %}
 
 {% set genericDescription = false %}
 {% include "info-section.njk" %}
 
-<section class="info">
+<section class="info description">
     <h2 class="info-title">Opis działki</h2>
-    {% if parcel.description and parcel.description.length %}
+    {% set descriptionInclude = parcel.descriptionFile | descriptionInclude %}
+    {% if descriptionInclude %}
+    {% include descriptionInclude %}
+    {% elif parcel.description and parcel.description.length %}
     {% for para in parcel.description %}
     <p>{{ para | safe }}</p>
     {% endfor %}

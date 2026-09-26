@@ -1,6 +1,56 @@
 [
   {
+    "number": "1+83-3+83-5",
+    "hidden": false,
+    "id": "249.1-83.3",
+    "title": "Działki budowlane nr 249/1 + 83/3 + 83/5",
+    "area": 3329,
+    "dimensions": "32-36m × 90m",
+    "access": "asfaltowy",
+    "sold": false,
+    "description": null,
+    "descriptionFile": "src/_includes/descriptions/249.1-83.3.html",
+    "mainImage": {
+      "src": "/img/img-249.1+83.3-010.webp",
+      "alt": "Działka budowlana przy drodze asfaltowej, o wymiarach 32x90m i powierzchni 3022m², w sąsiedztwie niskiej zabudowy jednorodzinnej;\n po prawej stronie droga wewnętrzna (307m²)."
+    },
+    "gallery": [
+      { "src": "/img/img-249.1+83.3-010.webp", "thumb": "/img/thumbs/img-249.1+83.3-010.webp", "alt": "Działka budowlana przy drodze asfaltowej, o wymiarach 32x90m i powierzchni 3022m², w sąsiedztwie niskiej zabudowy jednorodzinnej;\n po prawej stronie droga wewnętrzna (307m²)."},
+      { "src": "/img/img-249.1+83.3-150.webp", "thumb": "/img/thumbs/img-249.1+83.3-150.webp", "alt": "Wizualizacja zabudowy działki z domem jednorodzinnym dwulokalowym"},
+      { "src": "/img/img-249.1+83.3-100.webp", "thumb": "/img/thumbs/img-249.1+83.3-100.webp", "alt": "Ortofotomapa z wymiarami działki - około 32m szerokości w części północnej (27m frontu przy asfalcie z dwoma wjazdami), długość 90m, szerokość 36m w części południowej. Regularny kształt zbliżony do prostokąta."},
+      { "src": "/img/img-249.1+83.3-220.webp", "thumb": "/img/thumbs/img-249.1+83.3-220.webp", "alt": "Propozycja podziału i zabudowy działki: dwa domy jednorodzinne dwulokalowe na działkach 1500m². Właścicielowi jednego lokalu przypada ok. 750m² ziemi"},
+      { "src": "/img/svg/img-249.1+83.3-300.svg", "thumb": "/img/svg/img-249.1+83.3-300.svg", "alt": "Schemat proponowanego podziału i zabudowy działki: dwa domy jednorodzinne dwulokalowe na działkach 1500m². Właścicielowi jednego lokalu przypada ok. 750m² ziemi"},
+      //        { "src": "/img/img-249.1+83.3-200.webp", "thumb": "/img/thumbs/img-249.1+83.3-200.webp", "alt": ""},
+      { "src": "/img/img-249.1+83.3-201.webp", "thumb": "/img/thumbs/img-249.1+83.3-201.webp", "alt": "Położenie działki na os. Majdan - widoczna ul. Legionów oraz granica miasta."},
+        { "src": "/img/img-249.1+83.3-800.webp", "thumb": "/img/thumbs/img-249.1+83.3-800.webp", "alt": "Przebieg mediów - dostępne w drodze prąd, woda, kanalizacja, gaz, światłowód."},
+        { "src": "/img/img-249.1+83.3-900.webp", "thumb": "/img/thumbs/img-249.1+83.3-900.webp", "alt": "MPZP - obszar 29.47MN+R i 29.48MN+R. Widoczne na południu linie energetyczne w rzeczywistości zostały zdemontowane i przeniesione pod ziemię w innym przebiegu."},
+//      { "src": "/img/img-249.1-001.webp", "thumb": "/img/thumbs/img-249.1-001.webp", "alt": "Działka 249/1: widok z ul. Majdan na front działki" },
+//      { "src": "/img/img-249.1-010.webp", "thumb": "/img/thumbs/img-249.1-010.webp", "alt": "Działka 249/1: widok z ul. Majdan " },
+//      { "src": "/img/img-249.1-500.webp", "thumb": "/img/thumbs/img-249.1-500.webp", "alt": "Wizualizacja AI, jak mógłby wylądać dom posadowiony na działce 249.1" },
+//      { "src": "/img/img-249.1-999.webp", "thumb": "/img/thumbs/img-249.1-999.webp", "alt": "Działka 249/1 - widok z południowej grancy działki w stronę ul. Majdan, widoczne słupki wyznaczające granice działki; w tle domy północnej stronie ul. Majdan." },
+//      { "src": "/img/img-249.1-900.webp", "thumb": "/img/thumbs/img-249.1-900.webp", "alt": "Wycinek z MPZP - granice działek z przed przekształcenia, widoczne w południowej części linie energetyczne w rzeczywistości zostały zdemontowane i przeniesione pod ziemię w innym przebiegu" },
+//      { "src": "/img/img-249.1-910.webp", "thumb": "/img/thumbs/img-249.1-910.webp", "alt": "Działka 249/1 - fragmnt ortofotomapy z Geoportalu. Widoczna ul. Majdan ze ścieżką rowerową i chodnikiem. " },
+//      { "src": "/img/img-249.1-920.webp", "thumb": "/img/thumbs/img-249.1-920.webp", "alt": "Działka 249/1 - widoczne dostępne media - prąd (czerwony), gaz (żółty), kanalizacja sanitarna ks (brązowy) i światłowód (ts)" },
+      { "src": "/img/img-all-890.webp", "thumb": "/img/thumbs/img-all-890.webp", "alt": "Bocian na gnieździe na kominie tuż przy granicy oferowanej działki.\n Świetne perspektywy rozwoju rodziny!" },
+      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Żłobek i przedszkole \"Radosna Kraina\" - 550m od działki. Jedynie 8 minut spacerem." },
+      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko do koszykówki i siatkówki - 600m" },
+      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko do piłki nożnej - 600m" }
+    ],
+    "mapLink": { "url": "https://maps.app.goo.gl/mpPvB252i8XjcG1K9", "label": "Zamość, ul.&nbsp;Majdan 130" },
+    "geoportal": { "id": "066401_1.0001.AR_14.249/1 + 83/3 + 83/5", "url": "https://mapy.geoportal.gov.pl/imap/Imgp_2.html?locale=pl&gui=new&sessionID=31C8975A-17F6-47F7-8A1B-C875C6171782" },
+    "listings": [
+//      { "icon": "/icons/okolica.pl.ico", "label": "okolica.pl", "url": "https://www.okolica.pl/offer/show/89370-S-f0639/formular" },
+//      { "icon": "/icons/nieruchomosci-online.pl.ico", "label": "nieruchomosci-online.pl", "url": "https://zamosc.nieruchomosci-online.pl/dzialka,pusta/26435491.html" }
+    ],
+    "seo": {
+      "pageTitle": "Działka budowlana Zamość – ul. Majdan 130 | 3329m² | Bezpośrednio",
+      "metaDescription": "Sprzedam działkę budowlaną w Zamościu przy ul. Majdan 130 (nr 249/1+83/3+83/5), 3329m². Dojazd asfaltowy, media w drodze, MPZP: MN+R. Oferta bezpośrednia od właściciela.",
+      "ogImage": "https://dzialka-zamosc.pl/img/img-249.1+83.3-100.webp"
+    }
+  },
+  {
     "number": 1,
+    "hidden": true,
     "id": "249.1",
     "title": "Działka budowlana nr 249/1",
     "area": 1610,
@@ -21,9 +71,9 @@
       { "src": "/img/img-249.1-910.webp", "thumb": "/img/thumbs/img-249.1-910.webp", "alt": "Działka 249/1 - fragmnt ortofotomapy z Geoportalu. Widoczna ul. Majdan ze ścieżką rowerową i chodnikiem. " },
       { "src": "/img/img-249.1-920.webp", "thumb": "/img/thumbs/img-249.1-920.webp", "alt": "Działka 249/1 - widoczne dostępne media - prąd (czerwony), gaz (żółty), kanalizacja sanitarna ks (brązowy) i światłowód (ts)" },
       { "src": "/img/img-all-890.webp", "thumb": "/img/thumbs/img-all-890.webp", "alt": "Bocian na gnieździe na kominie w okolicy ul. Majdan" },
-      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Budynek w pobliżu działek przy ul. Majdan" },
-      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko sportowe w okolicy" },
-      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko w okolicy, w tle pola uprawne" }
+      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Żłobek i przedszkole \"Radosna Kraina\" - 550m od działki. Jedynie 8 minut spacerem." },
+      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko do koszykówki i siatkówki - 600m" },
+      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko do piłki nożnej - 600m" }
     ],
     "mapLink": { "url": "https://maps.app.goo.gl/12V8EJSKeCH45LN6A", "label": "Zamość, ul.&nbsp;Majdan" },
     "geoportal": { "id": "066401_1.0001.AR_14.249/1", "url": "https://mapy.geoportal.gov.pl/imap/Imgp_2.html?identifyParcel=066401_1.0001.AR_14.249%2f1" },
@@ -61,9 +111,9 @@
       { "src": "/img/img-249.2-800.webp", "thumb": "/img/thumbs/img-249.2-800.webp", "alt": "Ortofotomapa z zaznaczoną drogą dojazdową. Dojazd w gratis przy zakupie działki." },
       { "src": "/img/img-249.2-900.webp", "thumb": "/img/thumbs/img-249.2-900.webp", "alt": "Działka 249/2 wraz z instalacjami podziemnymi - w większości media dostępne w ul. Majdan, linia energetyczna w drodze wewnętrznej." },
       { "src": "/img/img-all-890.webp", "thumb": "/img/thumbs/img-all-890.webp", "alt": "Bocian na gnieździe na kominie w okolicy ul. Majdan" },
-      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Budynek w pobliżu działek przy ul. Majdan" },
-      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko sportowe w okolicy" },
-      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko w okolicy, w tle pola uprawne" }
+      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Żłobek i przedszkole \"Radosna Kraina\" - 550m od działki. Jedynie 8 minut spacerem." },
+      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko do koszykówki i siatkówki - 600m" },
+      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko do piłki nożnej - 600m" }
     ],
     "mapLink": { "url": "https://maps.app.goo.gl/U4SsWF27Pro1nSC88", "label": "Zamość, ul.&nbsp;Majdan" },
     "geoportal": { "id": "066401_1.0001.AR_14.249/2", "url": "https://mapy.geoportal.gov.pl/imap/Imgp_2.html?identifyParcel=066401_1.0001.AR_14.249%2f2" },
@@ -100,9 +150,9 @@
       { "src": "/img/img-249.3-720.webp", "thumb": "/img/thumbs/img-249.3-720.webp", "alt": "Wycinek z mapy uzbrojenia terenu z zaznaczoną działką 249/3" },
       { "src": "/img/img-249.3-730.webp", "thumb": "/img/thumbs/img-249.3-730.webp", "alt": "Wycinek z MPZP z zaznaczoną działką 249/3 i jej wymiarami" },
       { "src": "/img/img-all-890.webp", "thumb": "/img/thumbs/img-all-890.webp", "alt": "Bocian na gnieździe na kominie w okolicy ul. Majdan" },
-      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Budynek w pobliżu działek przy ul. Majdan" },
-      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko sportowe w okolicy" },
-      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko w okolicy, w tle pola uprawne" }
+      { "src": "/img/img-all-900.webp", "thumb": "/img/thumbs/img-all-900.webp", "alt": "Żłobek i przedszkole w pobliżu działek przy ul. Majdan" },
+      { "src": "/img/img-all-910.webp", "thumb": "/img/thumbs/img-all-910.webp", "alt": "Ogrodzone boisko do koszykówki i siatkówki - 600m" },
+      { "src": "/img/img-all-920.webp", "thumb": "/img/thumbs/img-all-920.webp", "alt": "Boisko do piłki nożnej - 600m" }
     ],
     "mapLink": null,
     "geoportal": { "id": "066401_1.0001.AR_14.249/3", "url": "https://mapy.geoportal.gov.pl/imap/Imgp_2.html?identifyParcel=066401_1.0001.AR_14.249%2f3" },

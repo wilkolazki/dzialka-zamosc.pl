@@ -1,4 +1,4 @@
-const parcels = require("../src/_data/parcels.json");
+const parcels = require("./parcels.js");
 
 const parcelNav = {};
 parcels.forEach((p, i) => {

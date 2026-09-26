@@ -19,6 +19,8 @@
 
     {% if parcel %}
     <script type="application/ld+json">{{ parcel | parcelJsonLd | safe }}</script>
+    {% elif developerOffer %}
+    <script type="application/ld+json">{{ developerOfferJsonLd | safe }}</script>
     {% else %}
     <script type="application/ld+json">{{ indexJsonLd | safe }}</script>
     <script type="application/ld+json">{{ faqJsonLd | safe }}</script>
@@ -153,7 +155,11 @@
             var currentImage = currentGallery[currentIndex];
             lightboxImg.src = currentImage.src;
             lightboxImg.alt = currentImage.alt;
-            lightboxDescription.textContent = currentImage.alt;
+            lightboxDescription.textContent = '';
+            currentImage.alt.split('\n').forEach(function (line, i) {
+                if (i > 0) lightboxDescription.appendChild(document.createElement('br'));
+                lightboxDescription.appendChild(document.createTextNode(line.trim()));
+            });
 
             // Reset control visibility and start hide timer
             showControls();
